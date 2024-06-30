@@ -25,10 +25,10 @@ User Roles
 - Online Bookstore System Design
 
 ### This is a Heading h3
-- In heading 3rd we are going to be design our database Schema.
+- In heading 3rd we are going to design our database Schema.
 - Here are the tables and Data Types
 # Customers Table
-# Attribute	        Type        	Description
+    # | Attribute |	        Type        	Description
 - custId	        SERIAL          Primary Key
 - fName	            VARCHAR (50)	First Name
 - lName	            VARCHAR (50)	Last Name
