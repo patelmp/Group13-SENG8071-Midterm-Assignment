@@ -100,8 +100,8 @@ User Roles
 
 #### This is a Heading h4
 ```` SQL
-... your SQL code here ...
-- Here we are writing our Create Read, Update and Delete SQL queries
+-- This our code block which content all the sql information
+-- Here we are writing our Create Read, Update and Delete SQL queries
 -- Creating table for Customers: -
 
 CREATE TABLE Customers (
@@ -115,7 +115,7 @@ CREATE TABLE Customers (
   updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-Creating table for Authors: -
+--Creating table for Authors: -
 
 CREATE TABLE Authors (
   authId SERIAL PRIMARY KEY,
@@ -128,7 +128,7 @@ CREATE TABLE Authors (
   updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-Creating table for Publishers: -
+-- Creating table for Publishers: -
 
 CREATE TABLE Publishers (
   publisherId SERIAL PRIMARY KEY,
@@ -139,7 +139,7 @@ CREATE TABLE Publishers (
   updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-Creating table for Books: -
+-- Creating table for Books: -
 
 CREATE TABLE Books (
   bookId SERIAL PRIMARY KEY,
@@ -158,7 +158,7 @@ CREATE TABLE Books (
   format VARCHAR(50)
 );
 
-Creating table for Reviews: -
+-- Creating table for Reviews: -
 
 CREATE TABLE Reviews (
   reviewId SERIAL PRIMARY KEY,
@@ -170,7 +170,7 @@ CREATE TABLE Reviews (
   updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-Creating table for Purchases: -
+-- Creating table for Purchases: -
 
 CREATE TABLE Purchases (
   purchaseId SERIAL PRIMARY KEY,
