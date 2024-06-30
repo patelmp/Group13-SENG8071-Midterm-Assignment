@@ -28,16 +28,15 @@ User Roles
 - In heading 3rd we are going to design our database Schema.
 - Here are the tables and Data Types
 # Customers Table
-    # | Attribute |	        | Type |        	| Description|
-      -------------          ------------------- ------------
-      | custId | 	        | SERIAL|            Primary Key
-        fName	            VARCHAR (50)	    First Name
-        lName	            VARCHAR (50)	    Last Name
-        emailId	            VARCHAR (100)	    Email Address
-       cellNumb	            VARCHAR (20)	    Phone Number
-       custAddress	        VARCHAR (500)	    Customer address
-       created	            TIMESTAMP	        DTTM
-       updated	            TIMESTAMP	        DTTM
+    #  Attribute          Type                Description
+        custId 	          SERIAL              Primary Key
+        fName	          VARCHAR (50)	      First Name
+        lName	          VARCHAR (50)	      Last Name
+        emailId	          VARCHAR (100)	      Email Address
+        cellNumb	      VARCHAR (20)	      Phone Number
+        custAddress	      VARCHAR (500)	      Customer address
+        created	          TIMESTAMP	          DTTM
+        updated	          TIMESTAMP	          DTTM
 
 # Authors Table
 # Attribute	        Type        	Description
