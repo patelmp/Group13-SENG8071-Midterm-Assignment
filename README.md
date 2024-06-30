@@ -304,7 +304,7 @@ INSERT INTO Customers (fName, lName, emailId, cellNumb, custAddress) VALUES
 ('William', 'Robinson', 'william.robinson@example.com', '123-456-7818', '2626 Redwood St, Anytown, INDIA'),
 ('Ella', 'Walker', 'ella.walker@example.com', '123-456-7819', '2727 Alder St, Anytown, CHINA');
 
--- Inserting sample data into the Authors table.
+-- Inserting sample data into the Author's table.
 
 INSERT INTO Authors (fName, lName, biography, birthDate, nationality) VALUES
 ('George', 'Orwell', 'English novelist and essayist', '1903-06-25', 'British'),
@@ -341,7 +341,7 @@ INSERT INTO Authors (fName, lName, biography, birthDate, nationality) VALUES
 
 --- Inserting sample data into the Reviews table.
 
-INSERT INTO Reviews (custId, bookId, rating, reviewText) VALUES
+INSERT INTO Reviews (custId, booked, rating, review text) VALUES
 (1, 1, 5, 'A haunting and profound book.'),
 (2, 2, 4, 'A delightful read with excellent social commentary.'),
 (3, 3, 5, 'An adventurous journey with deep themes.'),
@@ -376,7 +376,7 @@ INSERT INTO Reviews (custId, bookId, rating, reviewText) VALUES
 
 -- Inserting sample data into the Purchases table.
 
-INSERT INTO Purchases (custId, bookId, purchaseDate, totalPrice, paymentMethod) VALUES
+INSERT INTO Purchases (custId, booked, purchase date, totalPrice, payment method) VALUES
 (1, 1, '2023-01-01', 15.99, 'Credit Card'),
 (2, 2, '2023-01-02', 12.99, 'Credit Card'),
 (3, 3, '2023-01-03', 14.99, 'PayPal'),
@@ -409,7 +409,7 @@ INSERT INTO Purchases (custId, bookId, purchaseDate, totalPrice, paymentMethod) 
 (30, 30, '2023-01-30', 11.99, 'PayPal');
 
 -- This end of our insert table query
--- Here its begaining of Updating  sample date into indivisual table and testing all sample data
+-- Here its the beginning of Updating  the sample date into individual table and testing all sample data
 -- This all sample data collected by Swati
 
 -- Update Authors Table
@@ -468,11 +468,11 @@ SET TOTALPRICE = 79.99,
 PAYMENTMETHOD = 'Credit Card CC'
 WHERE PURCHASEID = 1;
 
---This is for delete or drop any table from database.
+--This is for deleting or dropping any table from the database.
 
-Drop table PURCHASES; -- If end user want to drop or delete any of table he could use same sql just replace table name.
+Drop table PURCHASES; -- If the end user wants to drop or delete any of the tables he could use the same sql just replace the table name.
 
---So here we have completed our CRUD operation for all required tables as well we have successfully run all query in our database.
+--So here we have completed our CRUD operation for all required tables as well we have successfully run all queries in our database.
 --Here is the DDL (Data Definition Language) statement for creating the Customers table.
 
 CREATE TABLE Customers (
@@ -537,7 +537,7 @@ SUM(p.totalPrice) > 10.00;
 
 -- By running this query, the user could fetch around 14 sample data.
 
--- Q.3 Well Reviewed books that has a better user rating than average
+-- Q.3 Well Reviewed books that have a better user rating than average
 -- Ans: -
 
 WITH average_rating AS (
@@ -595,19 +595,18 @@ LIMIT 10;
 
 -- By running this query, the user could fetch around 10 sample data.
 
--- Here is end of our code block that mean user has to execute all query in PostgreSQL only as i have am working into oracle 12c and 19c database which doesn’t support some attribute typer like text format
--- oracle support only CLOB in place of text this just for information.
+-- Here is the end of our code block which means the user has to execute all queries in PostgreSQL only as I am working into Oracle 12c and 19c databases which don’t support some attribute typer like text format
+-- Oracle supports only CLOB in place of text this is just for information.
+-- We have practically executed all Queries in PostgreSQL to verify any syntax error.
 -- For individual task assessment you can go through our commit history.
 
 ````
 
 ## References: - 
 
-
 https://gitlab.com/conestogac/postgres-with-pgadmin
 
 https://gitlab.com/conestogac/pipeline-sample
-
 
 https://www.shipmentsfree.com/slander/shipping/1?l=sfland4&sid=sfbing_CA_Search_Merchant2_15&q=book%20store&o=shcbof&msclkid=ca290eeb2fc518a5596d686a87119df9
 
