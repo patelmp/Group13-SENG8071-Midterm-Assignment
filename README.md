@@ -1,7 +1,8 @@
-# Group13-SENG8071-Midterm-Assignment
-# Markdown syntax guide
-Hi This 
 ## Headers
+# Group13-SENG8071-Midterm-Assignment
+Online bookstore system
+Hi This 
+
 
 # This is a Heading h1
 Welcome
