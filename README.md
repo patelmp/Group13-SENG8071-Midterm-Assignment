@@ -118,7 +118,7 @@ User Roles
 ```` SQL
 -- This our code block which content all the sql information
 -- Here we are writing our Create Read, Update and Delete SQL queries
--- As a project lead i (Mahendra Patel is responsile to design and dfine our database Schema
+-- As a project lead i (Mahendra Patel is responsile to design and define our database Schema
 -- Creating table for Customers: -
 
 CREATE TABLE Customers (
