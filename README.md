@@ -100,8 +100,9 @@ User Roles
 
 #### This is a Heading h4
 ```` Code Bolck
+... your SQL code here ...
 - Here we are writing our Create Read, Update and Delete SQL queries
-Creating table for Customers: -
+-- Creating table for Customers: -
 
 CREATE TABLE Customers (
   custId SERIAL PRIMARY KEY,
