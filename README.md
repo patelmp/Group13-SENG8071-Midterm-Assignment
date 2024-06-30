@@ -27,7 +27,9 @@ User Roles
 ### This is a heading H3
 - In heading 3rd we are going to design our database Schema.
 - Here are the tables and Data Types
+- As in this SQL we have used our attribute in camelCase only but PostgreSQL doesn’t support it because whenever marketing table its writing in small latter only.
 # Customers Table
+
 | #  Attribute          | Type                | Description          |
 |-----------------------|---------------------|----------------------|
 | custId 	            | SERIAL              | Primary Key          |
@@ -40,6 +42,7 @@ User Roles
 | updated	            | TIMESTAMP	          | DTTM                 |
 
 # Authors Table
+
 | #  Attribute          | Type                | Description          |
 |-----------------------|---------------------|----------------------|
 | authId	          | SERIAL	      | Author ID               |
@@ -63,8 +66,8 @@ User Roles
 | updated            | TIMESTAMP      | Last updated date and time      |
 
 
-* Books Table
-* 
+# Books Table
+  
 | #  Attribute       | Type            | Description                     |
 |--------------------|-----------------|---------------------------------|
 | bookId             | SERIAL          | Unique identifier for the book  |
@@ -96,6 +99,7 @@ User Roles
 | created       | TIMESTAMP    | Created date and time                        |
 | updated       | TIMESTAMP    | Last updated date and time                   |
 
+# Purchases Table
 
 | #  Attribute     | Type            | Description                                  |
 |------------------|-----------------|----------------------------------------------|
@@ -598,83 +602,4 @@ LIMIT 10;
 ````
 ###### This is a Heading h6
 
-## Emphasis
 
-Unordered
-Customers can search, buy, and review books
-Publishers and authors can manage their book listings
-Customers can write reviews
-Ordered
-Customers can search, buy, and review books
-Publishers and authors can manage their book listings
-Customers can write reviews
-Publishers can manage their book listings
-Authors can manage their book listings
-Images
-Online Bookstore System.
-
-**This text will be bold**  
-__This will also be bold__
-
-_You **can** combine them_
-
-## Lists
-
-
-### Unordered
-
-* Item 1
-* CREATE TABLE Books (
-    book_id INT PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
-    author_id INT,
-    genre VARCHAR(50),
-    price DECIMAL(10, 2),
-    cover_image VARCHAR(255)
-    -- Other relevant attributes
-);
-
-* Item 2
-* Item 2a
-* Item 2b
-
-### Ordered
-
-1. Item 1
-2. Item 2
-3. Item 3
-    1. Item 3a
-    2. Item 3b
-
-## Images
-
-![This is an alt text.](/image/sample.webp "This is a sample image.")
-
-## Links
-
-You may be using [Markdown Live Preview](https://markdownlivepreview.com/).
-
-## Blockquotes
-
-> Markdown is a lightweight markup language with plain-text-formatting syntax, created in 2004 by John Gruber with Aaron Swartz.
->
->> Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
-
-## Tables
-
-| Left columns  | Right columns |
-| ------------- |:-------------:|
-| left foo      | right foo     |
-| left bar      | right bar     |
-| left baz      | right baz     |
-
-## Blocks of code
-
-```
-let message = 'Hello world';
-alert(message);
-```
-
-## Inline code
-
-This web site is using `markedjs/marked`.
