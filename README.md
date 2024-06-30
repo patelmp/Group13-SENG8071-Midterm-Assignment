@@ -52,7 +52,9 @@ User Roles
 | updated	          | TIMESTAMP	    | DTTM                    |
 
 # Publishers Table
-# Attribute	        Type        	Description
+
+| #  Attribute          | Type                | Description          |
+|-----------------------|---------------------|----------------------|
 - publisherId	    SERIAL	        Unique identifier for the publisher
 - name	            VARCHAR (100)	Publisher name
 - publisherAddress	VARCHAR (500)	Publisher address
@@ -61,7 +63,9 @@ User Roles
 - updated	        TIMESTAMP	    DTTM
 
 * Books Table
-# Attribute	        Type        	Description
+* 
+| #  Attribute          | Type                | Description          |
+|-----------------------|---------------------|----------------------|
 - bookId	        SERIAL	        Unique identifier for the book
 - title            	VARCHAR (100)	Book title
 - bookLanguage	    VARCHAR (20)	Foreign key referencing the Authors table
@@ -79,7 +83,9 @@ User Roles
 
 
 # Reviews Table
-# Attribute	        Type        	Description
+
+| #  Attribute          | Type                | Description          |
+|-----------------------|---------------------|----------------------|
 - reviewId	    SERIAL	            Unique identifier for the review
 - custId	    INTEGER	            Foreign key referencing the Books table
 - bookId	    INTEGER	            Foreign key referencing the Customers table
@@ -89,7 +95,9 @@ User Roles
 - updated	    TIMESTAMP	        DTTM
 
 # Purchases Table
-# Attribute	        Type        	Description
+
+| #  Attribute          | Type                | Description          |
+|-----------------------|---------------------|----------------------|
 - purchaseId	    SERIAL	        Unique identifier for the review
 - custId	        INTEGER	        Foreign key referencing the Books table
 - bookId	        INTEGER	        Foreign key referencing the Customers table
