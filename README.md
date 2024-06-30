@@ -4,7 +4,6 @@ Hi This all about our
 # Online bookstore system
 
 
-
 # This is a Heading h1
 Here are duties assigned to an individual in our team member.
 - Designing database schema and defining tables - Mahendra Patel is responsible for making sure the design of database schema and helps teams communicate with one another.
@@ -14,7 +13,17 @@ Here are duties assigned to an individual in our team member.
 + Quality Assurance Engineer: - Swati is the QA engineer, tests the system to make sure it satisfies the specifications and is error-free.
 
 ## This is a Heading h2
-Welcome
+User Roles
+Customers: Look through books, buy them, write reviews.
+Writers: Take care or manage their books.
+Book listings are managed by publishers.
+Data to Collect
+Details about a book, including its title, author, genre, price, cover image, and format (physical, e-book, or audio).
+Name, email address, and past purchases made by the customer.
+The author details their name, and area of expertise in the genre.
+Publisher details: name, number of contacts.
+Online Bookstore System Design
+
 ###### This is a Heading h6
 
 ## Emphasis
