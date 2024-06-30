@@ -14,14 +14,14 @@ Here are duties assigned to an individual in our team member.
 
 ## This is a Heading h2
 User Roles
-- Customers: Look through books, buy them, write reviews etc.
-- Writers: Take care or manage their books etc.
-- Book listings are managed by publishers etc.
+- Customers: Look through books, buy them, write reviews.
+- Writers: Take care or manage their books.
+- Book listings are managed by publishers.
 - Data to Collect
-- Details about a book, including its title, author, genre, price, cover image, and format (physical, e-book, or audio) etc.
-- Name, email address, and past purchases made by the customer etc.
-- The author details their name, and area of expertise in the genre etc.
-- Publisher details: name, number of contacts etc.
+- Details about a book, including its title, author, genre, price, cover image, and format (physical, e-book, or audio) .
+- Name, email address, and past purchases made by the customer.
+- The author details their name, and area of expertise in the genre.
+- Publisher details: name, number of contacts.
 - Online Bookstore System Design
 
 ###### This is a Heading h6
