@@ -581,6 +581,7 @@ LIMIT 10;
 
 -- Here is end of our code block that mean user has to execute all query in PostgreSQL only as i have am working into oracle 12c and 19c database which doesn’t support some attribute typer like text format
 -- oracle support only CLOB in place of text this just for information.
+-- For individual task assessment you can go through our commit history.
 
 ````
 ###### This is a Heading h6
