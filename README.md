@@ -40,8 +40,8 @@ User Roles
 | updated	            | TIMESTAMP	          | DTTM                 |
 
 # Authors Table
-| # Attribute	      | Type        	Description               |
-|-------------------|---------------|-------------------------|
+| #  Attribute          | Type                | Description          |
+|-----------------------|---------------------|----------------------|
 | authId	          | SERIAL	      | Author ID               |
 | fName            	| VARCHAR (50)	| First Name              |
 | lName            	| VARCHAR (50)	| Last Name               |
