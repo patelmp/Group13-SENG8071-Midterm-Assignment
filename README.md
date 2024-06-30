@@ -600,6 +600,11 @@ LIMIT 10;
 -- For individual task assessment you can go through our commit history.
 
 ````
+
+References
+1. GitLab PostgreSQL with PgAdmin 2. Pipeline Sample 3. Antique Books Appraisers Exact 4. ShipmentsFree 5. Kobo 6. Awesome Books 7. Faire 8. University of Toronto Bookstore 9. BCIT Bookstore
+
+   
 ## References
 
 [1]: https://gitlab.com/conestogac/postgres-with-pgadmin
