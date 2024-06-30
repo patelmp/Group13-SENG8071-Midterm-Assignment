@@ -99,11 +99,11 @@ User Roles
 
 
 #### This is a Heading h4
-# Code Bolck
+```` Code Bolck
 - Here we are writing our Create Read, Update and Delete SQL queries
 Creating table for Customers: -
 
-```` CREATE TABLE Customers (
+CREATE TABLE Customers (
   custId SERIAL PRIMARY KEY,
   fName VARCHAR(50) NOT NULL,
   lName VARCHAR(50) NOT NULL,
@@ -114,10 +114,8 @@ Creating table for Customers: -
   updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-
-
-
 Creating table for Authors: -
+
 CREATE TABLE Authors (
   authId SERIAL PRIMARY KEY,
   fName VARCHAR(50) NOT NULL,
@@ -130,6 +128,7 @@ CREATE TABLE Authors (
 );
 
 Creating table for Publishers: -
+
 CREATE TABLE Publishers (
   publisherId SERIAL PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
@@ -140,6 +139,7 @@ CREATE TABLE Publishers (
 );
 
 Creating table for Books: -
+
 CREATE TABLE Books (
   bookId SERIAL PRIMARY KEY,
   title VARCHAR(100) NOT NULL,
@@ -156,6 +156,7 @@ CREATE TABLE Books (
   updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   format VARCHAR(50)
 );
+
 Creating table for Reviews: -
 
 CREATE TABLE Reviews (
@@ -168,10 +169,8 @@ CREATE TABLE Reviews (
   updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-
-
-
 Creating table for Purchases: -
+
 CREATE TABLE Purchases (
   purchaseId SERIAL PRIMARY KEY,
   custId INTEGER NOT NULL REFERENCES Customers(custId),
@@ -182,6 +181,7 @@ CREATE TABLE Purchases (
   created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
 
+````
 ###### This is a Heading h6
 
 ## Emphasis
