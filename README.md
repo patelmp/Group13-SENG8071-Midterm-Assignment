@@ -6,7 +6,13 @@ Hi This all about our
 
 
 # This is a Heading h1
-Welcome
+Here are duties assigned to an individual in our team member.
+- Designing database schema and defining tables - Mahendra Patel is responsible for making sure the design of database schema and helps teams communicate with one another.
+- Database Architect: - Mahendra Patel is responsible for designing the database schema and ensuring data integrity.
+- DDL/DML: -Swati Implemented the SQL queries and CRUD operations.
+- Data Analyst: - Yamani Ravikumar analyzes user data to generate insights like most popular genres, loyal customers.
+- Quality Assurance Engineer: - Swati is the QA engineer, tests the system to make sure it satisfies the specifications and is error-free.
+
 ## This is a Heading h2
 Welcome
 ###### This is a Heading h6
