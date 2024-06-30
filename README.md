@@ -103,7 +103,7 @@ User Roles
 - Here we are writing our Create Read, Update and Delete SQL queries
 Creating table for Customers: -
 
-CREATE TABLE Customers (
+```` CREATE TABLE Customers (
   custId SERIAL PRIMARY KEY,
   fName VARCHAR(50) NOT NULL,
   lName VARCHAR(50) NOT NULL,
@@ -113,6 +113,7 @@ CREATE TABLE Customers (
   created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+
 
 
 
