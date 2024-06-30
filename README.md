@@ -454,7 +454,7 @@ WHERE PURCHASEID = 1;
 
 --This is for delete or drop any table from database.
 
-Drop table PURCHASES; -- If end user want any of table he could use taht table name in place of Purchase table.
+Drop table PURCHASES; -- If end user want to drop or delete any of table he could use same sql just replace table name.
 
 --So here we have completed our CRUD operation for all required tables as well we have successfully run all query in our database.
 --Here is the DDL (Data Definition Language) statement for creating the Customers table.
