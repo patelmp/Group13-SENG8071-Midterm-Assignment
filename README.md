@@ -186,6 +186,7 @@ CREATE TABLE Purchases (
 -- This end of our create table query
 -- Here its begaining of inserting sample date into indivisual table
 -- This all sample data collected by Yamini Ravikumar 
+-- Inserting sample data into the Books table.
 
 INSERT INTO Books (title, bookLanguage, authId, publisherId, genre, publicationDate, price, pageCount, isbn, bookDescription,format) VALUES
 ('1984', 'English', 1, 1, 'Dystopian', '1949-06-08', 15.99, 328, '9780451524935', 'A dystopian social science fiction novel and cautionary tale.', 'physical books'),
@@ -391,6 +392,195 @@ INSERT INTO Purchases (custId, bookId, purchaseDate, totalPrice, paymentMethod) 
 (29, 29, '2023-01-29', 16.99, 'Credit Card'),
 (30, 30, '2023-01-30', 11.99, 'PayPal');
 
+-- This end of our insert table query
+-- Here its begaining of Updating  sample date into indivisual table and testing all sample data
+-- This all sample data collected by Swati
+
+-- Update Authors Table
+
+SET
+fName = 'Mahendra',
+lName = 'Patel',
+biography = 'Updated biography text.',
+birthDate = '2000-01-01',
+nationality = 'UpdatedNationality',
+updated = CURRENT_TIMESTAMP
+WHERE
+authId = 1;
+
+-- Update Publishers Table
+
+SET
+name = 'Mahendra',
+publisherAddress = ' Union St Waterloo CA',
+websiteUrl = 'www.updatedpublisher.com',
+updated = CURRENT_TIMESTAMP
+WHERE
+publisherId = 7;
+
+-- Update Books Table
+
+SET
+title = 'My Life My Rules',
+bookLanguage = 'Hindi',
+authId = 1,
+publisherId = 1,
+genre = '3',
+publicationDate = '2000-01-01',
+price = 79.99,
+pageCount = 777,
+isbn = '9780000000000',
+bookDescription = 'Updated description text.',
+updated = CURRENT_TIMESTAMP
+WHERE
+bookId = 1;
+
+-- Update Reviews Table
+
+SET
+custId = 2,
+bookId = 9,
+rating = 5,
+reviewText = 'Updated review text.',
+updated = CURRENT_TIMESTAMP
+WHERE
+reviewId = 1;
+
+-- Update PURCHASES Table
+
+SET TOTALPRICE = 79.99,
+PAYMENTMETHOD = 'Credit Card CC'
+WHERE PURCHASEID = 1;
+
+--This is for delete or drop any table from database.
+
+Drop table PURCHASES; -- If end user want any of table he could use taht table name in place of Purchase table.
+
+--So here we have completed our CRUD operation for all required tables as well we have successfully run all query in our database.
+--Here is the DDL (Data Definition Language) statement for creating the Customers table.
+
+CREATE TABLE Customers (
+  custId SERIAL PRIMARY KEY,
+  fName VARCHAR(50) NOT NULL,
+  lName VARCHAR(50) NOT NULL,
+  emailId VARCHAR(100) NOT NULL UNIQUE,
+  cellNumb VARCHAR(20),
+  custAddress VARCHAR(500),
+  created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+--Here is the DML (Data Manipulation Language) statement for inserting a new review into the Customers table:
+
+INSERT INTO Customers (fName, lName, emailId, cellNumb, custAddress) VALUES
+('John', 'Doe', 'john.doe@example.com', '123-456-7890', '123 Main St, Anytown, USA'),
+('Jane', 'Smith', 'jane.smith@example.com', '123-456-7891', '456 Elm St, Anytown, CHINA');
+
+-- Here is the project question answer which is asked by our professor and its part our project.
+-- As a the last part was tested by me (Mahendra Patel)
+-- Q.1 Power writers (authors) with more than 10 books in the same genre published within the last 10 years.
+-- Answer: -
+
+SELECT
+a.authId,
+a.fName,
+a.lName,
+b.genre,
+COUNT(b.bookId) AS book_count
+FROM
+Authors a
+JOIN
+Books b ON a.authId = b.authId
+WHERE
+b.publicationDate >= CURRENT_DATE - INTERVAL '10 years'
+GROUP BY
+a.authId, a.fName, a.lName, b.genre
+HAVING
+COUNT(b.bookId) > 10;
+
+--By running this query, the user could fetch around single row sample data.
+
+-- Q.2. Loyal Customers who have spent more than 10 dollars in the last year?
+-- Answer: - 
+
+SELECT
+c.custId,
+c.fName,
+c.lName,
+SUM(p.totalPrice) AS total_spent
+FROM
+Customers c
+JOIN
+Purchases p ON c.custId = p.custId
+WHERE
+p.purchaseDate >= CURRENT_DATE - INTERVAL '1 year'
+GROUP BY
+c.custId, c.fName, c.lName
+HAVING
+SUM(p.totalPrice) > 10.00;
+
+-- By running this query, the user could fetch around 14 sample data.
+
+-- Q.3 Well Reviewed books that has a better user rating than average
+-- Ans: -
+
+WITH average_rating AS (
+SELECT AVG(rating) AS avg_rating
+FROM Reviews
+)
+SELECT
+b.bookId,
+b.title,
+AVG(r.rating) AS average_rating
+FROM
+Books b
+JOIN
+Reviews r ON b.bookId = r.bookId
+GROUP BY
+b.bookId, b.title
+HAVING
+AVG(r.rating) > (SELECT avg_rating FROM average_rating);
+
+-- By running this query, the user could fetch around 14 sample data.
+
+-- Q.4 The most popular genre by sales?
+-- Ans: -
+
+SELECT
+b.genre,
+COUNT(p.purchaseId) AS total_sales
+FROM
+Books b
+JOIN
+Purchases p ON b.bookId = p.bookId
+GROUP BY
+b.genre
+ORDER BY
+total_sales DESC
+LIMIT 1;
+
+-- By running this query, the user could fetch around 1 sample data.
+
+-- Q.5 The 10 most recent posted reviews by Customers
+-- Ans: -
+
+SELECT
+r.reviewId,
+r.custId,
+r.bookId,
+r.rating,
+r.reviewText,
+r.created
+FROM
+Reviews r
+ORDER BY
+r.created DESC
+LIMIT 10;
+
+-- By running this query, the user could fetch around 10 sample data.
+
+-- Here is end of our code block that mean user has to execute all query in PostgreSQL only as i have am working into oracle 12c and 19c database which doesn’t support some attribute typer like text format
+-- oracle support only CLOB in place of text
 
 ````
 ###### This is a Heading h6
