@@ -53,59 +53,61 @@ User Roles
 
 # Publishers Table
 
-| #  Attribute          | Type                | Description          |
-|-----------------------|---------------------|----------------------|
-- publisherId	    SERIAL	        Unique identifier for the publisher
-- name	            VARCHAR (100)	Publisher name
-- publisherAddress	VARCHAR (500)	Publisher address
-- websiteUrl	    VARCHAR (100)	If any website URL
-- created	        TIMESTAMP	    DTTM
-- updated	        TIMESTAMP	    DTTM
+| #  Attribute       | Type           | Description                     |
+|--------------------|----------------|---------------------------------|
+| publisherId        | SERIAL         | Unique identifier for publisher |
+| name               | VARCHAR(100)   | Publisher name                  |
+| publisherAddress   | VARCHAR(500)   | Publisher address               |
+| websiteUrl         | VARCHAR(100)   | Website URL, if any             |
+| created            | TIMESTAMP      | Created date and time           |
+| updated            | TIMESTAMP      | Last updated date and time      |
+
 
 * Books Table
 * 
-| #  Attribute          | Type                | Description          |
-|-----------------------|---------------------|----------------------|
-- bookId	        SERIAL	        Unique identifier for the book
-- title            	VARCHAR (100)	Book title
-- bookLanguage	    VARCHAR (20)	Foreign key referencing the Authors table
-- authId	        INTEGER	Book    Genre
-- publisherId	    INTEGER	Book    Publication date
-- genre 	        VARCHAR (50)	It’s about book generation
-- publicationDate	VARCHAR (50)	Book published date 
-- price	            DECIMAL (10, 2)	Retails price on book
-- pageCount	        INTEGER	Total   Page number
-- isbn 	            VARCHAR (20)	Specific ISBN number for book
-- bookDescription	TEXT	        Details about book
-- created	        TIMESTAMP	    DTTM
-- updated	        TIMESTAMP	    DTTM
-- format 	VARCHAR (50)	Physical books, E-books, and Audiobooks
+| #  Attribute       | Type            | Description                     |
+|--------------------|-----------------|---------------------------------|
+| bookId             | SERIAL          | Unique identifier for the book  |
+| title              | VARCHAR(100)    | Book title                      |
+| bookLanguage       | VARCHAR(20)     | Language of the book            |
+| authId             | INTEGER         | Foreign key referencing Authors table |
+| publisherId        | INTEGER         | Foreign key referencing Publishers table |
+| genre              | VARCHAR(50)     | Book genre                      |
+| publicationDate    | VARCHAR(50)     | Book publication date           |
+| price              | DECIMAL(10, 2)  | Retail price of the book        |
+| pageCount          | INTEGER         | Total number of pages           |
+| isbn               | VARCHAR(20)     | ISBN number of the book         |
+| bookDescription    | TEXT            | Details about the book          |
+| created            | TIMESTAMP       | Created date and time           |
+| updated            | TIMESTAMP       | Last updated date and time      |
+| format             | VARCHAR(50)     | Format of the book (e.g., Physical, E-book, Audiobook) |
+
 
 
 # Reviews Table
 
-| #  Attribute          | Type                | Description          |
-|-----------------------|---------------------|----------------------|
-- reviewId	    SERIAL	            Unique identifier for the review
-- custId	    INTEGER	            Foreign key referencing the Books table
-- bookId	    INTEGER	            Foreign key referencing the Customers table
-- rating	    SMALLINT	        Review rating (1-5)
-- reviewText	TEXT	            Review text
-- created	    TIMESTAMP	        DTTM
-- updated	    TIMESTAMP	        DTTM
+| #  Attribute  | Type         | Description                                  |
+|---------------|--------------|----------------------------------------------|
+| reviewId      | SERIAL       | Unique identifier for the review             |
+| custId        | INTEGER      | Foreign key referencing the Customers table  |
+| bookId        | INTEGER      | Foreign key referencing the Books table      |
+| rating        | SMALLINT     | Review rating (1-5)                          |
+| reviewText    | TEXT         | Review text                                  |
+| created       | TIMESTAMP    | Created date and time                        |
+| updated       | TIMESTAMP    | Last updated date and time                   |
 
-# Purchases Table
 
-| #  Attribute          | Type                | Description          |
-|-----------------------|---------------------|----------------------|
-- purchaseId	    SERIAL	        Unique identifier for the review
-- custId	        INTEGER	        Foreign key referencing the Books table
-- bookId	        INTEGER	        Foreign key referencing the Customers table
-- purchaseDate	    DATE	        Review rating (1-5)
-- totalPrice	    DECIMAL (10, 2)	Review text
-- paymentMethod	    VARCHAR (50)	Its about Credit or debit card
-- created	        TIMESTAMP	    DTTM
-- updated	        TIMESTAMP	    DTTM
+| #  Attribute     | Type            | Description                                  |
+|------------------|-----------------|----------------------------------------------|
+| purchaseId       | SERIAL          | Unique identifier for the purchase           |
+| custId           | INTEGER         | Foreign key referencing the Customers table  |
+| bookId           | INTEGER         | Foreign key referencing the Books table      |
+| purchaseDate     | DATE            | Date of purchase                             |
+| totalPrice       | DECIMAL(10, 2)  | Total price of the purchase                  |
+| paymentMethod    | VARCHAR(50)     | Payment method (e.g., Credit or Debit card)  |
+| created          | TIMESTAMP       | Created date and time                        |
+| updated          | TIMESTAMP       | Last updated date and time                   |
+
 
 
 #### This is a Heading h4
