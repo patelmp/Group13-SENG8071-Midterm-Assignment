@@ -99,7 +99,7 @@ User Roles
 
 
 #### This is a Heading h4
-```` Code Bolck
+```` SQL
 ... your SQL code here ...
 - Here we are writing our Create Read, Update and Delete SQL queries
 -- Creating table for Customers: -
