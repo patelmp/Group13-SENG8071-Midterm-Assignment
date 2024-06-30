@@ -1,30 +1,30 @@
 ## Headers
 # **Group13-SENG8071-Midterm-Assignment**
-Hi This all about our 
+Hi This is all about our 
 # Online bookstore system
 
 
 # This is a Heading h1
-Here are duties assigned to an individual in our team member.
+Here are the duties assigned to an individual in our team member.
 - Designing database schema and defining tables - Mahendra Patel is responsible for making sure the design of database schema and helps teams communicate with one another.
 - Database Architect: - Mahendra Patel is responsible for designing the database schema and ensuring data integrity.
 - DDL/DML: -Swati Implemented the SQL queries and CRUD operations.
-- Data Analyst: - Yamani Ravikumar analyzes user data to generate insights like most popular genres, loyal customers.
-+ Quality Assurance Engineer: - Swati is the QA engineer, tests the system to make sure it satisfies the specifications and is error-free.
+- Data Analyst: - Yamani Ravikumar analyzes user data to generate insights into the most popular genres and loyal customers.
++ Quality Assurance Engineer: - Swati, the QA engineer, tests the system to ensure it satisfies the specifications and is error-free.
 
 ## This is a Heading h2
 User Roles
 - Customers: Look through books, buy them, write reviews.
-- Writers: Take care or manage their books.
-- Book listings are managed by publishers.
+- Writers: Take care of or manage their books.
+- Publishers manage book listings.
 - Data to Collect
-- Details about a book, including its title, author, genre, price, cover image, and format (physical, e-book, or audio) .
+- Details about a book, including its title, author, genre, price, cover image, and format (physical, e-book, or audio).
 - Name, email address, and past purchases made by the customer.
 - The author details their name, and area of expertise in the genre.
 - Publisher details: name, number of contacts.
 - Online Bookstore System Design
 
-### This is a Heading h3
+### This is a heading H3
 - In heading 3rd we are going to design our database Schema.
 - Here are the tables and Data Types
 # Customers Table
@@ -40,15 +40,16 @@ User Roles
 | updated	            | TIMESTAMP	          | DTTM                 |
 
 # Authors Table
-# Attribute	        Type        	Description
-- authId	        SERIAL	        Author ID
-- fName            	VARCHAR (50)	First Name
-- lName            	VARCHAR (50)	Last Name
-- biography	        TEXT	        Details about author's 
-- birthDate	        DATE	        Date of birthday
-- nationality	    VARCHAR (50)	Its citizen status 
-- created	        TIMESTAMP	    DTTM
-- updated	        TIMESTAMP	    DTTM
+| # Attribute	      | Type        	Description               |
+|-------------------|---------------|-------------------------|
+| authId	          | SERIAL	      | Author ID               |
+| fName            	| VARCHAR (50)	| First Name              |
+| lName            	| VARCHAR (50)	| Last Name               |
+| biography	        | TEXT	        | Details about author's  |
+| birthDate	        | DATE	        | Date of birthday        |
+| nationality	      | VARCHAR (50)	| Its citizen status      |
+| created	          | TIMESTAMP	    | DTTM                    |
+| updated	          | TIMESTAMP	    | DTTM                    |
 
 # Publishers Table
 # Attribute	        Type        	Description
