@@ -24,6 +24,85 @@ User Roles
 - Publisher details: name, number of contacts.
 - Online Bookstore System Design
 
+### This is a Heading h3
+- In heading 3rd we are going to be design our database Schema.
+- Here are the tables and Data Types
+_Customers Table_
+Attribute	Type	Description
+custId	SERIAL	Primary Key
+fName	VARCHAR (50)	First Name
+lName	VARCHAR (50)	Last Name
+emailId	VARCHAR (100)	Email Address
+cellNumb	VARCHAR (20)	Phone Number
+custAddress	VARCHAR (500)	Customer address
+created	TIMESTAMP	DTTM
+updated	TIMESTAMP	DTTM
+
+Authors
+Attribute	Type	Attribute
+authId	SERIAL	Author ID
+fName	VARCHAR (50)	First Name
+lName	VARCHAR (50)	Last Name
+biography	TEXT	Details about author's 
+birthDate	DATE	Date of birthday
+nationality	VARCHAR (50)	Its citizen status 
+created	TIMESTAMP	DTTM
+updated	TIMESTAMP	DTTM
+
+Publishers
+Column Name	Data Type	Description
+publisherId	SERIAL	Unique identifier for the publisher
+name	VARCHAR (100)	Publisher name
+publisherAddress	VARCHAR (500)	Publisher address
+websiteUrl	VARCHAR (100)	If any website URL
+created	TIMESTAMP	DTTM
+updated	TIMESTAMP	DTTM
+
+Books
+Column Name	Data Type	Description
+bookId	SERIAL	Unique identifier for the book
+title	VARCHAR (100)	Book title
+bookLanguage	VARCHAR (20)	Foreign key referencing the Authors table
+authId	INTEGER	Book genre
+publisherId	INTEGER	Book publication date
+genre 	VARCHAR (50)	It’s about book generation
+publicationDate	VARCHAR (50)	Book published date 
+ Price	 DECIMAL (10, 2)	Retails price on book
+pageCount	INTEGER	Total page number
+ isbn 	 VARCHAR (20)	Specific ISBN number for book
+bookDescription	TEXT	Details about book
+created	TIMESTAMP	DTTM
+updated	TIMESTAMP	DTTM
+format 	VARCHAR (50)	Physical books, E-books, and Audiobooks
+
+
+
+Reviews
+Column Name	Data Type	Description
+reviewId	SERIAL	Unique identifier for the review
+custId	INTEGER	Foreign key referencing the Books table
+bookId	INTEGER	Foreign key referencing the Customers table
+rating	SMALLINT	Review rating (1-5)
+reviewText	TEXT	Review text
+updated	TIMESTAMP	DTTM
+updated	TIMESTAMP	DTTM
+
+
+
+
+Purchases
+Column Name	Data Type	Description
+purchaseId	SERIAL	Unique identifier for the review
+custId	INTEGER	Foreign key referencing the Books table
+bookId	INTEGER	Foreign key referencing the Customers table
+purchaseDate	DATE	Review rating (1-5)
+totalPrice	DECIMAL (10, 2)	Review text
+paymentMethod	VARCHAR (50)	Its about Credit or debit card
+updated	TIMESTAMP	DTTM
+updated	TIMESTAMP	DTTM
+
+
+
 ###### This is a Heading h6
 
 ## Emphasis
