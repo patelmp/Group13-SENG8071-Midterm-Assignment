@@ -98,6 +98,88 @@ User Roles
 - updated	        TIMESTAMP	    DTTM
 
 
+#### This is a Heading h4
+# Code Bolck
+- Here we are writing our Create Read, Update and Delete SQL queries
+Creating table for Customers: -
+
+CREATE TABLE Customers (
+  custId SERIAL PRIMARY KEY,
+  fName VARCHAR(50) NOT NULL,
+  lName VARCHAR(50) NOT NULL,
+  emailId VARCHAR(100) NOT NULL UNIQUE,
+  cellNumb VARCHAR(20),
+  custAddress VARCHAR(500),
+  created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+Creating table for Authors: -
+CREATE TABLE Authors (
+  authId SERIAL PRIMARY KEY,
+  fName VARCHAR(50) NOT NULL,
+  lName VARCHAR(50) NOT NULL,
+  biography TEXT,
+  birthDate DATE,
+  nationality VARCHAR(50),
+  created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+Creating table for Publishers: -
+CREATE TABLE Publishers (
+  publisherId SERIAL PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  publisherAddress VARCHAR(500),
+  websiteUrl VARCHAR(100),
+  created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+Creating table for Books: -
+CREATE TABLE Books (
+  bookId SERIAL PRIMARY KEY,
+  title VARCHAR(100) NOT NULL,
+  bookLanguage VARCHAR (20) NOT NULL,
+  authId INTEGER NOT NULL REFERENCES Authors(authId),
+  publisherId INTEGER NOT NULL REFERENCES Publishers(publisherId),
+  genre VARCHAR(50) NOT NULL,
+  publicationDate DATE NOT NULL,
+  price DECIMAL(10, 2) NOT NULL,
+  pageCount INTEGER,
+  isbn VARCHAR(20),
+  bookDescription TEXT,
+  created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  format VARCHAR(50)
+);
+Creating table for Reviews: -
+
+CREATE TABLE Reviews (
+  reviewId SERIAL PRIMARY KEY,
+  custId INTEGER NOT NULL REFERENCES Customers(custId),
+  bookId INTEGER NOT NULL REFERENCES Books(bookId),
+  rating SMALLINT NOT NULL CHECK (rating BETWEEN 1 AND 5),
+  reviewText TEXT,
+  created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+
+Creating table for Purchases: -
+CREATE TABLE Purchases (
+  purchaseId SERIAL PRIMARY KEY,
+  custId INTEGER NOT NULL REFERENCES Customers(custId),
+  bookId INTEGER NOT NULL REFERENCES Books(bookId),
+  purchaseDate DATE NOT NULL,
+  totalPrice DECIMAL(10, 2) NOT NULL,
+  paymentMethod VARCHAR(50),
+  created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
 
 ###### This is a Heading h6
 
