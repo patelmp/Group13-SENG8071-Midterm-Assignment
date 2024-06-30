@@ -602,8 +602,15 @@ LIMIT 10;
 ````
 
 References
-1. GitLab PostgreSQL with PgAdmin 2. Pipeline Sample 3. Antique Books Appraisers Exact 4. ShipmentsFree 5. Kobo 6. Awesome Books 7. Faire 8. University of Toronto Bookstore 9. BCIT Bookstore
-
+GitLab PostgreSQL with PgAdmin{:target="_blank"}
+Pipeline Sample{:target="_blank"}
+Antique Books Appraisers Exact{:target="_blank"}
+ShipmentsFree{:target="_blank"}
+Kobo{:target="_blank"}
+Awesome Books{:target="_blank"}
+Faire{:target="_blank"}
+University of Toronto Bookstore{:target="_blank"}
+BCIT Bookstore{:target="_blank"}
    
 ## References
 
