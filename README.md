@@ -601,16 +601,29 @@ LIMIT 10;
 
 ````
 
-References
-GitLab PostgreSQL with PgAdmin
-Pipeline Sample
-Antique Books Appraisers Exact
-ShipmentsFree
-Kobo
-Awesome Books
-Faire
-University of Toronto Bookstore
-BCIT Bookstore
+## References: - 
+
+
+https://gitlab.com/conestogac/postgres-with-pgadmin
+
+https://gitlab.com/conestogac/pipeline-sample
+
+
+https://www.shipmentsfree.com/slander/shipping/1?l=sfland4&sid=sfbing_CA_Search_Merchant2_15&q=book%20store&o=shcbof&msclkid=ca290eeb2fc518a5596d686a87119df9
+
+https://www.kobo.com/ca/en
+
+https://www.uoftbookstore.com/
+
+https://www.bcitbookstore.ca/bcit/
+
+https://www.awesomebooks.com/?msclkid=e1f66380571c17db7df70501ffc85cb1
+
+https://www.faire.com/en-ca/category/Paper%20&%20Novelty/subcategory/Books?page=8&utm_source=bing&utm_medium=cpc&utm_campaign=BI_AMER_CAN_EN-CA_RTL_PRO_SEARCH_NB_X_DSA&gclid=894d034681bf163c3f4f65c76139ea8e&gclsrc=3p.ds&&keyword=%2Fen-ca%2Fcategory%2F&matchtype=b&device=c&adgroupid=1293026269240558&adid=&campaignid=686810764&gclid=894d034681bf163c3f4f65c76139ea8e&gclsrc=3p.ds&msclkid=894d034681bf163c3f4f65c76139ea8e
+
+https://www.askantiqueexperts.com/lp/antique-books?r=ppc|mslpa|22|Antiques-China-Appraisers-Exact|Books-value|&JPKW=rare%20books&JPDC=S&JPST=&JPAD=&JPMT=b&JPNW=o&JPAF=txt&JPRC=1&JPCD=&JPOP=&pmt=bb&cmpid=531098252&agid=1358998891601482&pcrid=84937830618975&fiid=&tgtid=kwd-84938583248353:loc-32&dvc=c&msclkid=3ed7de0e845616ba9b07b88f2c82dff6
+
+
 
 
 
