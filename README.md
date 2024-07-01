@@ -602,7 +602,8 @@ LIMIT 10;
 
 ````
 
-# Here we are going to provide our typescript code block which will include our OnlineBookstoreSystemConnection, OnlineBooksStoreSystem, and OnlineBookstoreSystemCrudOperation.
+# Here is our typescript code block.
+# It includes our OnlineBookstoreSystemConnection, OnlineBooksStoreSystem, and OnlineBookstoreSystemCrudOperation files.
 
  ```` typescript
 <!--This is our OnlineBookstoreSystemConnection file-->
