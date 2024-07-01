@@ -1,10 +1,12 @@
-## Headers
-# **Group13-SENG8071-Midterm-Assignment**
-Hi This is all about our 
+# Group13-SENG8071-Midterm-Assignment
 # Online bookstore system
+Here is our Project partner cum group member list: -
 
+Mahendra Patel (9006695)
+SWATI (8975520)
+Yamini Ravikumar (8974260)
 
-# This is a Heading h1
+# Team member and their task distrubation.
 Here are the duties assigned to an individual in our team member.
 - Designing database schema and defining tables - Mahendra Patel is responsible for making sure the design of database schema and helps teams communicate with one another.
 - Database Architect: - Mahendra Patel is responsible for designing the database schema and ensuring data integrity.
@@ -12,8 +14,8 @@ Here are the duties assigned to an individual in our team member.
 - Data Analyst: - Yamani Ravikumar analyzes user data to generate insights into the most popular genres and loyal customers.
 + Quality Assurance Engineer: - Swati, the QA engineer, tests the system to ensure it satisfies the specifications and is error-free.
 
-## This is a Heading h2
-User Roles
+## User Roles
+
 - Customers: Look through books, buy them, write reviews.
 - Writers: Take care of or manage their books.
 - Publishers manage book listings.
@@ -24,10 +26,11 @@ User Roles
 - Publisher details: name, number of contacts.
 - Online Bookstore System Design
 
-### This is a heading H3
+### Our Database Schema Table View
 - In heading 3rd we are going to design our database Schema.
 - Here are the tables and Data Types
-- As in this SQL we have used our attribute in camelCase only but PostgreSQL doesn’t support it because whenever marketing table its writing in small letter only.
+- As in this SQL we have used our attribute in camelCase only but PostgreSQL doesn’t support it because whenever marketing table it's written in small letters only.
+  
 # Customers Table
 
 | #  Attribute          | Type                | Description          |
@@ -114,7 +117,7 @@ User Roles
 
 
 
-#### This is a Heading h4
+#### This code block only contains our Query information.
 ```` SQL
 -- This our code block which content all the sql information
 -- Here we are writing our Create Read, Update and Delete SQL queries
@@ -602,7 +605,8 @@ LIMIT 10;
 
 ````
 
-# Here is our typescript code block.
+#### This code block only contains our typescript information.
+
 # It includes our OnlineBookstoreSystemConnection, OnlineBooksStoreSystem, and OnlineBookstoreSystemCrudOperation files.
 
  ```` typescript
