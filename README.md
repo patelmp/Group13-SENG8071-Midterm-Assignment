@@ -12,7 +12,7 @@ Here are the duties assigned to an individual in our team member.
 - Database Architect: - Mahendra Patel is responsible for designing the database schema and ensuring data integrity.
 - DDL/DML: -Swati Implemented the SQL queries and CRUD operations.
 - Data Analyst: - Yamani Ravikumar analyzes user data to generate insights into the most popular genres and loyal customers.
-+ Quality Assurance Engineer: - Swati, the QA engineer, tests the system to ensure it satisfies the specifications and is error-free.
+- Quality Assurance Engineer: - Swati, the QA engineer, tests the system to ensure it satisfies the specifications and is error-free.
 
 # User Roles
 
