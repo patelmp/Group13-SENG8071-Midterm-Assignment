@@ -156,7 +156,7 @@ CREATE TABLE Publishers (
   updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
--- Creating table for Books: -
+-- Creating a table for Books: -
 
 CREATE TABLE Books (
   bookId SERIAL PRIMARY KEY,
@@ -175,7 +175,7 @@ CREATE TABLE Books (
   format VARCHAR(50)
 );
 
--- Creating table for Reviews: -
+-- Creating a table for Reviews: -
 
 CREATE TABLE Reviews (
   reviewId SERIAL PRIMARY KEY,
@@ -187,7 +187,7 @@ CREATE TABLE Reviews (
   updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
--- Creating table for Purchases: -
+-- Creating a table for Purchases: -
 
 CREATE TABLE Purchases (
   purchaseId SERIAL PRIMARY KEY,
@@ -200,7 +200,7 @@ CREATE TABLE Purchases (
   updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
 
 -- This end of our create table query
--- Here its beginning of inserting sample date into indivisual table
+-- Here its the beginning of inserting sample data into individual table
 -- This all sample data collected by Yamini Ravikumar 
 -- Inserting sample data into the Books table.
 
@@ -270,7 +270,7 @@ INSERT INTO Publishers (name, publisherAddress, websiteUrl) VALUES
 ('Indiana University Press', '601 N Morton St, Bloomington, IN 47404, USA', 'iupress.org'),
 ('University of Texas Press', 'P.O. Box 7819, Austin, TX 78713-7819, USA', 'utpress.utexas.edu');
 
---Inserting sample data into the Customers table.
+--Inserting sample data into the Customer table.
 
 INSERT INTO Customers (fName, lName, emailId, cellNumb, custAddress) VALUES
 ('John', 'Doe', 'john.doe@example.com', '123-456-7890', '123 Main St, Anytown, USA'),
@@ -409,7 +409,7 @@ INSERT INTO Purchases (custId, booked, purchase date, totalPrice, payment method
 (30, 30, '2023-01-30', 11.99, 'PayPal');
 
 -- This end of our insert table query
--- Here its the beginning of Updating  the sample date into individual table and testing all sample data
+-- Here is the beginning of Updating  the sample data into individual tables and testing all sample data
 -- This all sample data collected by Swati
 
 -- Update Authors Table
@@ -470,7 +470,7 @@ WHERE PURCHASEID = 1;
 
 --This is for deleting or dropping any table from the database.
 
-Drop table PURCHASES; -- If the end user wants to drop or delete any of the tables he could use the same sql just replace the table name.
+Drop table PURCHASES; -- If the end user wants to drop or delete any of the tables he could use the same SQL just replace the table name.
 
 --So here we have completed our CRUD operation for all required tables as well we have successfully run all queries in our database.
 --Here is the DDL (Data Definition Language) statement for creating the Customers table.
@@ -492,7 +492,7 @@ INSERT INTO Customers (fName, lName, emailId, cellNumb, custAddress) VALUES
 ('John', 'Doe', 'john.doe@example.com', '123-456-7890', '123 Main St, Anytown, USA'),
 ('Jane', 'Smith', 'jane.smith@example.com', '123-456-7891', '456 Elm St, Anytown, CHINA');
 
--- Here is the project question answer which is asked by our professor and its part our project.
+-- Here is the project question answer which is asked by our professor and is part of our project.
 -- As a the last part was tested by me (Mahendra Patel)
 -- Q.1 Power writers (authors) with more than 10 books in the same genre published within the last 10 years.
 -- Answer: -
@@ -601,6 +601,143 @@ LIMIT 10;
 -- For individual task assessment you can go through our commit history.
 
 ````
+
+# Here we are going to provide our typescript code block which will include our OnlineBookstoreSystemConnection, OnlineBooksStoreSystem, and OnlineBookstoreSystemCrudOperation.
+
+ ```` typescript
+<!--This is our OnlineBookstoreSystemConnection file-->
+import { Pool } from 'pg';
+
+const pool = new Pool({
+  user: 'postgres',
+  host: 'localhost',
+  database: 'postgres',
+  password: 'password',
+  port: 5432,
+});
+
+export default pool;
+
+<!--OnlineBooksStoreSystem-->
+
+import { Pool, QueryResult } from 'pg';
+import pool from './OnlineBookstoreSystemConnection.';
+
+// We have constantly maintain camelCase as per attribute.
+
+interface OnlineBookstoreSystem {
+  bookId: number;
+  title: string;
+  bookLanguage: string;
+  authId: number;
+  publisherId: number;
+  genre: string;
+  publicationDate: string;
+  price: number;
+  pageCount: number;
+  isbn: string;
+  bookDescription: string;
+  created: Date;
+  updated: Date;
+  format: string;
+}
+
+export interface Books {
+  create(book: OnlineBookstoreSystem): Promise<OnlineBookstoreSystem>;
+  read(bookId: number): Promise<OnlineBookstoreSystem | null>;
+  update(bookId: number, book: Partial<OnlineBookstoreSystem>): Promise<OnlineBookstoreSystem | null>;
+  delete(bookId: number): Promise<boolean>;
+}
+
+export class BookStore implements Books {
+  private pool: Pool;
+
+  constructor() {
+    this.pool = pool;
+  }
+
+  async create(book: OnlineBookstoreSystem): Promise<OnlineBookstoreSystem> {
+    const query = `
+      INSERT INTO books (bookId, title, bookLanguage, authId, publisherId, genre, publicationdate, price, pageCount, isbn, bookDescription, created, updated, format)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)
+      RETURNING *`;
+    const values = [
+      book.bookId, book.title, book.bookLanguage, book.authId, book.publisherId,
+      book.genre, book.publicationdate, book.price, book.pageCount, book.isbn,
+      book.bookDescription, book.created, book.updated, book.format
+    ];
+
+    const result: QueryResult = await this.pool.query(query, values);
+    return result.rows[0];
+  }
+
+  async read(bookId: number): Promise<OnlineBookstoreSystem | null> {
+    const query = 'SELECT * FROM books WHERE bookId = $1';
+    const result: QueryResult = await this.pool.query(query, [bookId]);
+    return result.rows[0] || null;
+  }
+
+  async update(bookId: number, book: Partial<OnlineBookstoreSystem>): Promise<OnlineBookstoreSystem | null> {
+    const fields = Object.keys(book).map((key, index) => `${key} = $${index + 2}`).join(', ');
+    const values = Object.values(book);
+    const query = `
+      UPDATE books SET ${fields}
+      WHERE bookId = $1
+      RETURNING *`;
+    const result: QueryResult = await this.pool.query(query, [bookId, ...values]);
+    return result.rows[0] || null;
+  }
+
+  async delete(bookId: number): Promise<boolean> {
+    const query = 'DELETE FROM books WHERE bookId = $1';
+    const result: QueryResult = await this.pool.query(query, [bookId]);
+    return result.rowCount > 0;
+  }
+}
+
+
+<!--OnlineBookstoreSystemCrudOperation-->
+
+import { BookStore } from './books';
+import pool from './OnlineBookstoreSystemConnection';
+
+async function main() {
+  const bookStore = new BookStore();
+
+  // Create a new book
+  const newBook: OnlineBookstoreSystem = {
+    bookId: 1,
+    title: 'My Life My Rules',
+    bookLanguage: 'Hindi',
+    authId: 1,
+    publisherId: 1,
+    genre: 3,
+    publicationDate: '2000-01-01',
+    price: 79.99,
+    pageCount: 777,
+    isbn: '9780000000000',
+    bookDescription: 'Updated description text.',
+    created: new Date(),
+    updated: new Date(),
+    format: 'Hardcover'
+  };
+
+  const createdBook = await bookStore.create(newBook);
+  console.log('Created a new Book:', createdBook);
+
+  const readBook = await bookStore.read(createdBook.bookId);
+  console.log('Reading a Book:', readBook);
+
+  const updatedBook = await bookStore.update(createdBook.bookId, { price: 79.99 });
+  console.log('Updated a Book:', updatedBook);
+
+  const deletedBook = await bookStore.delete(createdBook.bookId);
+  console.log('Deleted a Book:', deletedBook);
+}
+
+main().catch(console.error);
+
+ ````
 
 ## References: - 
 
