@@ -27,7 +27,7 @@ User Roles
 ### This is a heading H3
 - In heading 3rd we are going to design our database Schema.
 - Here are the tables and Data Types
-- As in this SQL we have used our attribute in camelCase only but PostgreSQL doesn’t support it because whenever marketing table its writing in small latter only.
+- As in this SQL we have used our attribute in camelCase only but PostgreSQL doesn’t support it because whenever marketing table its writing in small letter only.
 # Customers Table
 
 | #  Attribute          | Type                | Description          |
