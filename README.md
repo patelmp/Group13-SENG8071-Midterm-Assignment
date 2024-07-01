@@ -14,7 +14,7 @@ Here are the duties assigned to an individual in our team member.
 - Data Analyst: - Yamani Ravikumar analyzes user data to generate insights into the most popular genres and loyal customers.
 + Quality Assurance Engineer: - Swati, the QA engineer, tests the system to ensure it satisfies the specifications and is error-free.
 
-## User Roles
+# User Roles
 
 - Customers: Look through books, buy them, write reviews.
 - Writers: Take care of or manage their books.
@@ -26,14 +26,14 @@ Here are the duties assigned to an individual in our team member.
 - Publisher details: name, number of contacts.
 - Online Bookstore System Design
 
-### Our Database Schema Table View
+# Our Database Schema Table View
 - In heading 3rd we are going to design our database Schema.
 - Here are the tables and Data Types
 - As in this SQL we have used our attribute in camelCase only but PostgreSQL doesn’t support it because whenever marketing table it's written in small letters only.
   
 # Customers Table
 
-| #  Attribute          | Type                | Description          |
+|    Attribute          | Type                | Description          |
 |-----------------------|---------------------|----------------------|
 | custId 	            | SERIAL              | Primary Key          |
 | fName	                | VARCHAR (50)	      | First Name           |
@@ -46,7 +46,7 @@ Here are the duties assigned to an individual in our team member.
 
 # Authors Table
 
-| #  Attribute          | Type                | Description          |
+|    Attribute          | Type                | Description          |
 |-----------------------|---------------------|----------------------|
 | authId	          | SERIAL	      | Author ID               |
 | fName            	| VARCHAR (50)	| First Name              |
@@ -59,7 +59,7 @@ Here are the duties assigned to an individual in our team member.
 
 # Publishers Table
 
-| #  Attribute       | Type           | Description                     |
+|    Attribute       | Type           | Description                     |
 |--------------------|----------------|---------------------------------|
 | publisherId        | SERIAL         | Unique identifier for publisher |
 | name               | VARCHAR(100)   | Publisher name                  |
@@ -71,7 +71,7 @@ Here are the duties assigned to an individual in our team member.
 
 # Books Table
   
-| #  Attribute       | Type            | Description                     |
+|    Attribute       | Type            | Description                     |
 |--------------------|-----------------|---------------------------------|
 | bookId             | SERIAL          | Unique identifier for the book  |
 | title              | VARCHAR(100)    | Book title                      |
@@ -92,7 +92,7 @@ Here are the duties assigned to an individual in our team member.
 
 # Reviews Table
 
-| #  Attribute  | Type         | Description                                  |
+|    Attribute  | Type         | Description                                  |
 |---------------|--------------|----------------------------------------------|
 | reviewId      | SERIAL       | Unique identifier for the review             |
 | custId        | INTEGER      | Foreign key referencing the Customers table  |
@@ -104,7 +104,7 @@ Here are the duties assigned to an individual in our team member.
 
 # Purchases Table
 
-| #  Attribute     | Type            | Description                                  |
+|    Attribute     | Type            | Description                                  |
 |------------------|-----------------|----------------------------------------------|
 | purchaseId       | SERIAL          | Unique identifier for the purchase           |
 | custId           | INTEGER         | Foreign key referencing the Customers table  |
@@ -117,7 +117,7 @@ Here are the duties assigned to an individual in our team member.
 
 
 
-#### This code block only contains our Query information.
+# This code block only contains our Query information.
 ```` SQL
 -- This our code block which content all the sql information
 -- Here we are writing our Create Read, Update and Delete SQL queries
@@ -605,7 +605,7 @@ LIMIT 10;
 
 ````
 
-#### This code block only contains our typescript information.
+# This code block only contains our typescript information.
 
 # It includes our OnlineBookstoreSystemConnection, OnlineBooksStoreSystem, and OnlineBookstoreSystemCrudOperation files.
 
@@ -744,7 +744,7 @@ main().catch(console.error);
 
  ````
 
-## References: - 
+# References: - 
 
 https://gitlab.com/conestogac/postgres-with-pgadmin
 
