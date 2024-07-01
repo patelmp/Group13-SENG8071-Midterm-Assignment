@@ -2,11 +2,11 @@
 # Online bookstore system
 Here is our Project partner cum group member list: -
 
-Mahendra Patel (9006695)
-SWATI (8975520)
-Yamini Ravikumar (8974260)
+- Mahendra Patel (9006695)
+- SWATI (8975520)
+- Yamini Ravikumar (8974260)
 
-# Team member and their task distrubation.
+# Team member and their task distribution.
 Here are the duties assigned to an individual in our team member.
 - Designing database schema and defining tables - Mahendra Patel is responsible for making sure the design of database schema and helps teams communicate with one another.
 - Database Architect: - Mahendra Patel is responsible for designing the database schema and ensuring data integrity.
