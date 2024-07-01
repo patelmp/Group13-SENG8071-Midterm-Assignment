@@ -200,7 +200,7 @@ CREATE TABLE Purchases (
   updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
 
 -- This end of our create table query
--- Here its begaining of inserting sample date into indivisual table
+-- Here its beginning of inserting sample date into indivisual table
 -- This all sample data collected by Yamini Ravikumar 
 -- Inserting sample data into the Books table.
 
