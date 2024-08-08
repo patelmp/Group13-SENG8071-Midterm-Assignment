@@ -1,6 +1,6 @@
 # Group13-SENG8071-Midterm-Assignment
 # Online bookstore system
-Here is our Project partner cum group member list: -
+Here is our Project partner cum group member list: 
 
 - Mahendra Patel (9006695)
 - SWATI (8975520)
