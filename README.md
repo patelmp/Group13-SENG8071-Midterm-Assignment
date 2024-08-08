@@ -804,7 +804,7 @@ export class BookStore implements Books {
 }
 
 Final Project :
-Creat
+
 Creating entity typeorm for Author table as part of the book store
 
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from "typeorm";
@@ -915,11 +915,7 @@ async function deleteAuthor(authId: number) {
   }
 }
  
-// Example usage
-createAuthor();
-readAuthors();
-updateAuthor(1); // Replace with the actual author ID you want to update
-deleteAuthor(1); // Replace with the actual author ID you want to delete
+
 
 
 ##
@@ -973,7 +969,7 @@ describe('Author Entity', () => {
 
 ##
 
-Integration testing with superfast
+**Integration testing with superfast**
 
 npm install --save-dev supertest
 
