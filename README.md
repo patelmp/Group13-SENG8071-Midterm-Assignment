@@ -1,18 +1,18 @@
-# Group13-SENG8071-Midterm-Assignment
+# Group1-SENG8071-Final Project
 # Online bookstore system
 Here is our Project partner cum group member list: 
 
-- Mahendra Patel (9006695)
-- SWATI (8975520)
 - Yamini Ravikumar (8974260)
+- Jagriti Singh (8967403)
+- Ramandeep kaur (8973502)
 
 # Team member and their task distribution.
 Here are the duties assigned to an individual in our team member.
-- Designing database schema and defining tables - Mahendra Patel is responsible for making sure the design of database schema and helps teams communicate with one another.
-- Database Architect: - Mahendra Patel is responsible for designing the database schema and ensuring data integrity.
-- DDL/DML: -Swati Implemented the SQL queries and CRUD operations.
-- Data Analyst: - Yamani Ravikumar analyzes user data to generate insights into the most popular genres and loyal customers.
-- Quality Assurance Engineer: - Swati, the QA engineer, tests the system to ensure it satisfies the specifications and is error-free.
+- Designing database schema and defining tables - Yamini is responsible for making sure the design of database schema and helps teams communicate with one another.
+- Database Architect: - Yamini is responsible for designing the database schema and ensuring data integrity.
+- DDL/DML: -Jagriti Implemented the SQL queries and CRUD operations.
+- Data Analyst: - Ramandeep  analyzes user data to generate insights into the most popular genres and loyal customers.
+- Quality Assurance Engineer: - Jagriti, the QA engineer, tests the system to ensure it satisfies the specifications and is error-free.
 
 # User Roles
 
@@ -802,6 +802,304 @@ export class BookStore implements Books {
     return result.rowCount > 0;
   }
 }
+
+Final Project :
+Creat
+Creating entity typeorm for Author table as part of the book store
+
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from "typeorm";
+ 
+@Entity()
+export class Author {
+  @PrimaryGeneratedColumn()
+  authId: number;
+ 
+  @Column({
+    length: 50,
+    nullable: false,
+  })
+  fName: string;
+ 
+  @Column({
+    length: 50,
+    nullable: false,
+  })
+  lName: string;
+ 
+  @Column("text", { nullable: true })
+  biography: string;
+ 
+  @Column("date", { nullable: true })
+  birthDate: Date;
+ 
+  @Column({
+    length: 50,
+    nullable: true,
+  })
+  nationality: string;
+ 
+  @CreateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
+  created: Date;
+ 
+  @UpdateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
+  updated: Date;
+}
+ 
+ 
+ 
+
+##
+
+CURD operation on the author table in typeorm
+
+CRUD Operations for Author
+import { getRepository } from "typeorm";
+import { Author } from "./Author"; // Adjust the path as necessary
+ 
+// Create a new author
+async function createAuthor() {
+  const authorRepository = getRepository(Author);
+ 
+  const newAuthor = authorRepository.create({
+    fName: "Jane",
+    lName: "Austen",
+    biography: "English novelist known primarily for her six major novels...",
+    birthDate: new Date("1775-12-16"),
+    nationality: "British",
+    created: new Date(),
+    updated: new Date(),
+  });
+ 
+  await authorRepository.save(newAuthor);
+  console.log("Author has been saved:", newAuthor);
+}
+ 
+// Read all authors
+async function readAuthors() {
+  const authorRepository = getRepository(Author);
+ 
+  const authors = await authorRepository.find();
+  console.log("All authors:", authors);
+}
+ 
+// Update an author
+async function updateAuthor(authId: number) {
+  const authorRepository = getRepository(Author);
+ 
+  const author = await authorRepository.findOneBy({ authId });
+ 
+  if (author) {
+    author.fName = "UpdatedFirstName";
+    author.lName = "UpdatedLastName";
+    author.biography = "Updated biography...";
+    author.birthDate = new Date("1800-01-01");
+    author.nationality = "UpdatedNationality";
+    author.updated = new Date();
+ 
+    await authorRepository.save(author);
+    console.log("Author has been updated:", author);
+  } else {
+    console.log("Author not found");
+  }
+}
+ 
+// Delete an author
+async function deleteAuthor(authId: number) {
+  const authorRepository = getRepository(Author);
+ 
+  const result = await authorRepository.delete(authId);
+  if (result.affected) {
+    console.log(`Author with ID ${authId} has been deleted.`);
+  } else {
+    console.log(`Author with ID ${authId} not found.`);
+  }
+}
+ 
+// Example usage
+createAuthor();
+readAuthors();
+updateAuthor(1); // Replace with the actual author ID you want to update
+deleteAuthor(1); // Replace with the actual author ID you want to delete
+
+
+##
+
+Unit Test with jest
+
+update jest.config.js file
+
+##
+
+Typescript for Unit Testing
+
+npm install --save-dev jest @types/jest ts-jest
+
+
+Create a Jest configuration file (jest.config.js):
+ 
+
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+};
+
+
+Author Entity Unit Tests (author.entity.spec.ts)
+
+
+import { Author } from './Author';
+
+
+describe('Author Entity', () => {
+  it('should create an author entity', () => {
+    const author = new Author();
+    author.fName = 'Jane';
+    author.lName = 'Austen';
+    author.biography = 'English novelist known primarily for her six major novels...';
+    author.birthDate = new Date('1775-12-16');
+    author.nationality = 'British';
+    author.created = new Date();
+    author.updated = new Date();
+
+
+    expect(author).toBeDefined();
+    expect(author.fName).toBe('Jane');
+    expect(author.lName).toBe('Austen');
+    expect(author.biography).toBe('English novelist known primarily for her six major novels...');
+    expect(author.birthDate).toEqual(new Date('1775-12-16'));
+    expect(author.nationality).toBe('British');
+  });
+});
+
+##
+
+Integration testing with superfast
+
+npm install --save-dev supertest
+
+
+Integration Tests (author.integration.spec.ts)
+
+
+
+import request from 'supertest';
+import { createConnection, getConnection } from 'typeorm';
+import { app } from './app'; // Assuming you have an Express app setup
+import { Author } from './Author';
+
+
+beforeAll(async () => {
+  await createConnection({
+    type: 'sqlite',
+    database: ':memory:',
+    dropSchema: true,
+    entities: [Author],
+    synchronize: true,
+    logging: false,
+  });
+});
+
+
+afterAll(async () => {
+  const connection = getConnection();
+  await connection.close();
+});
+
+
+describe('Author API', () => {
+  it('should create a new author', async () => {
+    const response = await request(app)
+      .post('/authors')
+      .send({
+        fName: 'Jane',
+        lName: 'Austen',
+        biography: 'English novelist known primarily for her six major novels...',
+        birthDate: '1775-12-16',
+        nationality: 'British',
+      });
+
+
+    expect(response.status).toBe(201);
+    expect(response.body.fName).toBe('Jane');
+    expect(response.body.lName).toBe('Austen');
+  });
+
+
+  it('should get all authors', async () => {
+    const response = await request(app).get('/authors');
+    expect(response.status).toBe(200);
+    expect(response.body.length).toBeGreaterThan(0);
+  });
+
+
+  it('should update an author', async () => {
+    const response = await request(app)
+      .put('/authors/1')
+      .send({
+        fName: 'UpdatedFirstName',
+        lName: 'UpdatedLastName',
+      });
+
+
+    expect(response.status).toBe(200);
+    expect(response.body.fName).toBe('UpdatedFirstName');
+    expect(response.body.lName).toBe('UpdatedLastName');
+  });
+
+
+  it('should delete an author', async () => {
+    const response = await request(app).delete('/authors/1');
+    expect(response.status).toBe(200);
+  });
+});
+
+
+To make the integration tests work, you need to set up your Express routes.
+Express App (app.ts)
+ 
+import express from 'express';
+import { createConnection, getRepository } from 'typeorm';
+import { Author } from './Author';
+ 
+const app = express();
+app.use(express.json());
+ 
+app.post('/authors', async (req, res) => {
+  const authorRepository = getRepository(Author);
+  const author = authorRepository.create(req.body);
+  await authorRepository.save(author);
+  res.status(201).send(author);
+});
+ 
+app.get('/authors', async (req, res) => {
+  const authorRepository = getRepository(Author);
+  const authors = await authorRepository.find();
+  res.status(200).send(authors);
+});
+ 
+app.put('/authors/:id', async (req, res) => {
+  const authorRepository = getRepository(Author);
+  const author = await authorRepository.findOne(req.params.id);
+  if (author) {
+    authorRepository.merge(author, req.body);
+    const result = await authorRepository.save(author);
+    res.status(200).send(result);
+  } else {
+    res.status(404).send('Author not found');
+  }
+});
+ 
+app.delete('/authors/:id', async (req, res) => {
+  const authorRepository = getRepository(Author);
+  const result = await authorRepository.delete(req.params.id);
+  if (result.affected) {
+    res.status(200).send('Author deleted');
+  } else {
+    res.status(404).send('Author not found');
+  }
+});
+ 
+export { app };
 
  ````
 
